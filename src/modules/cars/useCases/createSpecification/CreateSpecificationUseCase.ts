@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { inject, injectable } from "tsyringe";
 
+import { AppError } from "../../../../errors/AppError";
 import { ISpecificationRepository } from "../../repositories/ISpecificationRepository";
 
 interface IRequest {
@@ -20,7 +21,7 @@ class CreateSpecificationUseCase {
       await this.specificationsRepository.findByName(name);
 
     if (specificationAldreadyExists) {
-      throw new Error("Specification already exists");
+      throw new AppError("Specification already exists");
     }
     await this.specificationsRepository.create({ name, description });
   }
