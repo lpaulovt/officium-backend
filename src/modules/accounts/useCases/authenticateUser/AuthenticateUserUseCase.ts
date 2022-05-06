@@ -18,8 +18,18 @@ interface IRequest {
 
 interface IResponse {
   user: {
-    name: string,
-    email: string,
+    org_name: string;
+    email: string;
+    org_short_descrip: string;
+    address: {
+      street: string;
+      number: number;
+      zipcode: string;
+      complement: string;
+      city: string;
+      state: string;
+      district: string;
+    }
   },
   token: string;
   refresh_token: string;
@@ -70,8 +80,18 @@ class AuthenticateUserUseCase {
 
     const tokenReturn: IResponse = {
       user: {
-        name: user.name,
+        org_name: user.org_name,
+        org_short_descrip: user.org_short_descrip,
         email: user.email,
+        address: {
+          street: user.street,
+          number: user.number,
+          zipcode: user.zipcode,
+          complement: user.complement,
+          city: user.city,
+          state: user.state,
+          district: user.district
+        }
       },
       token,
       refresh_token

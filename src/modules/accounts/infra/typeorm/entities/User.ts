@@ -7,7 +7,7 @@ class User {
   id: string;
 
   @Column()
-  name: string;
+  org_name: string;
 
   @Column()
   email: string;
@@ -16,13 +16,28 @@ class User {
   password: string;
 
   @Column()
-  driver_license: string;
+  org_short_descrip: string;
 
   @Column()
-  isAdmin: boolean;
+  street: string;
 
   @Column()
-  avatar: string;
+  number: number;
+
+  @Column()
+  zipcode: string;
+
+  @Column()
+  complement: string;
+
+  @Column()
+  city: string;
+
+  @Column()
+  state: string;
+
+  @Column()
+  district: string;
 
   @CreateDateColumn()
   created_at: Date;

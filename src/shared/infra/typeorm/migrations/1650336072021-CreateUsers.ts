@@ -12,7 +12,12 @@ export class CreateUsers1650336072021 implements MigrationInterface {
                         isPrimary: true,
                     },
                     {
-                        name: "name",
+                        name: "org_name",
+                        type: "varchar",
+                        isUnique: true,
+                    },
+                    {
+                        name: "email",
                         type: "varchar",
                     },
                     {
@@ -20,17 +25,36 @@ export class CreateUsers1650336072021 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
-                        name: "email",
+                        name: "org_short_descrip",
                         type: "varchar",
                     },
                     {
-                        name: "driver_license",
+                        name: "street",
                         type: "varchar",
                     },
                     {
-                        name: "isAdmin",
-                        type: "boolean",
-                        default: false,
+                        name: "number",
+                        type: "numeric",
+                    },
+                    {
+                        name: "zipcode",
+                        type: "varchar",
+                    },
+                    {
+                        name: "complement",
+                        type: "varchar",
+                    },
+                    {
+                        name: "city",
+                        type: "varchar",
+                    },
+                    {
+                        name: "state",
+                        type: "varchar",
+                    },
+                    {
+                        name: "district",
+                        type: "varchar",
                     },
                     {
                         name: "created_at",

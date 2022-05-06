@@ -3,9 +3,9 @@
   "type": "postgres",
   "port": 5432,
   "host": "localhost",
-  "username": "docker",
-  "password": "ignite",
-  "database": "rentalx",
+  "username": "admin",
+  "password": "admin",
+  "database": "database_officium",
   "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
   "cli": {
     "migrationsDir": "./src/shared/infra/typeorm/migrations"
