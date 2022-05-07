@@ -25,6 +25,9 @@ class Job {
   job_type: string;
 
   @Column()
+  job_description: string;
+
+  @Column()
   is_remote: boolean;
 
   @Column()

@@ -24,6 +24,10 @@ export class CreateJobs1651949061305 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
+                        name: "job_description",
+                        type: "varchar",
+                    },
+                    {
                         name: "is_remote",
                         type: "boolean",
                         default: false,

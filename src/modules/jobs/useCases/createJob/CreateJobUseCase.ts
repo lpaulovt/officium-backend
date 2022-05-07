@@ -8,6 +8,7 @@ interface IRequest {
   job_title: string;
   job_category_name: string;
   job_type: string;
+  job_description: string;
   is_remote: boolean;
   city: string;
   state: string;
@@ -28,6 +29,7 @@ class CreateJobUseCase {
     city,
     state,
     org_id,
+    job_description,
   }: IRequest): Promise<Job> {
     const job = await this.jobsRepository.create({
       job_title,
@@ -37,6 +39,7 @@ class CreateJobUseCase {
       city,
       state,
       org_id,
+      job_description,
     })
 
     return job;

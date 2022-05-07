@@ -5,9 +5,15 @@ import { CreateJobUseCase } from "./CreateJobUseCase";
 
 class CreateJobController {
   async handle(request: Request, response: Response): Promise<Response> {
-    const { job_title, job_category_name, job_type, is_remote, city, state } =
-      request.body;
-    console.log(request.user);
+    const {
+      job_title,
+      job_category_name,
+      job_type,
+      is_remote,
+      city,
+      state,
+      job_description,
+    } = request.body;
     const { id } = request.user;
 
     const createJobUseCase = container.resolve(CreateJobUseCase);
@@ -16,6 +22,7 @@ class CreateJobController {
       job_title,
       job_category_name,
       job_type,
+      job_description,
       is_remote,
       city,
       state,

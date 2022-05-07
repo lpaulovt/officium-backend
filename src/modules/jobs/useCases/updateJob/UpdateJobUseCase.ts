@@ -30,7 +30,7 @@ class UpdateJobUseCase {
     city,
     state,
   }: IRequest): Promise<void> {
-    await this.jobsRepository.updateJob({
+    await this.jobsRepository.update({
       job_id,
       job_title,
       job_category_name,

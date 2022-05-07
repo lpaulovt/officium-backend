@@ -19,6 +19,7 @@ class JobsRepository implements IJobsRepository {
     city,
     state,
     org_id,
+    job_description,
   }: ICreateJobDTO): Promise<Job> {
     const job = this.repository.create({
       job_title,
@@ -28,6 +29,7 @@ class JobsRepository implements IJobsRepository {
       city,
       state,
       org_id,
+      job_description,
     });
 
     await this.repository.save(job);
