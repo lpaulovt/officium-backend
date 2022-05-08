@@ -10,6 +10,7 @@ export class CreateJobs1651949061305 implements MigrationInterface {
                         name: "id",
                         type: "uuid",
                         isPrimary: true,
+                        isUnique: true,
                     },
                     {
                         name: "job_title",
@@ -21,10 +22,6 @@ export class CreateJobs1651949061305 implements MigrationInterface {
                     },
                     {
                         name: "job_type",
-                        type: "varchar",
-                    },
-                    {
-                        name: "job_description",
                         type: "varchar",
                     },
                     {
