@@ -2,6 +2,7 @@ import "reflect-metadata";
 import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
 import swaggerUi from "swagger-ui-express";
+import cors from "cors";
 
 import { AppError } from "@shared/errors/AppError";
 import { router } from "@shared/infra/http/routes";
@@ -13,6 +14,12 @@ import createConnection from "../typeorm";
 
 createConnection();
 const app = express();
+const corsOptions = {
+  origin: "*",
+  credentials: true, // access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use(express.json());
 app.use(router);

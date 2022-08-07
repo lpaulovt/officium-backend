@@ -12,6 +12,7 @@ interface IRequest {
   is_remote: boolean;
   city: string;
   state: string;
+  job_description: string;
 }
 
 @injectable()
@@ -29,6 +30,7 @@ class UpdateJobUseCase {
     is_remote,
     city,
     state,
+    job_description
   }: IRequest): Promise<void> {
     await this.jobsRepository.update({
       job_id,
@@ -38,6 +40,7 @@ class UpdateJobUseCase {
       is_remote,
       city,
       state,
+      job_description
     })
   }
 }

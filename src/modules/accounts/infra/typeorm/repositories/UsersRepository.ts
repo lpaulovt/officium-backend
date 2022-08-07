@@ -97,6 +97,7 @@ class UsersRepository implements IUserRepository {
     const users = await this.repository
       .createQueryBuilder("users")
       .select([
+        "users.id",
         "users.org_name",
         "users.org_short_descrip",
         "users.state",

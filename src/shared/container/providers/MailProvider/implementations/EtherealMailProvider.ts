@@ -41,13 +41,14 @@ class EtherealMailProvider implements IMailProvider {
 
     const message = await this.client.sendMail({
       to,
-      from: "Rentx <noreplay@rentx.com.br>",
+      from: "Officium <noreplay@officium.com.br>",
       subject,
       html: templateHTML,
     });
 
     console.log("Message sent: %s", message.messageId);
-    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(message));
+    console.log("Preview URL:  %s", nodemailer.getTestMessageUrl(message));
+    console.log("Preview URL:  %s", nodemailer.getTestMessageUrl(message));
   }
 }
 

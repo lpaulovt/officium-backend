@@ -6,4 +6,5 @@ interface IUpdateJobDTO {
   is_remote: boolean;
   city: string;
   state: string;
+  job_description: string;
 }
